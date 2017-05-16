@@ -1,2 +1,9 @@
+#Excludes python binaries
 *.pyc
+
+#Exclude personal virtual environment for django
 Website/django-jul
+
+#Exclude hidden files except gitignore
+.*
+!.gitignore
