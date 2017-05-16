@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Categories</title>
+</head>
+<body>
+
+<a href="{% url 'jeu:URLverdict' %}">Resultat</a>
+
+
+{% if all_category %}
+<ul>
+
+{% for category in all_category %}
+<li><a href="{% url 'jeu:URLquestions' category.id %}">{{ category.category }}</a></li>
+
+{% endfor %}
+</ul>
+{% else %}
+
+<h3> You have no categories</h3>
+
+{% endif %}
+</body>
+</html>

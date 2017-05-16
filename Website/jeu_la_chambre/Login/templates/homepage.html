@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Homepage</title>
+
+<form action="{% url 'Login:Login' %}" method="post">
+	{% csrf_token %}
+
+  <fieldset>
+    <legend>Login:</legend>
+    Username:<br>
+    <input type="text" name="username">
+    <br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+<form action="{% url 'Login:newUser' %}" method="post">
+	{% csrf_token %}
+	
+  <fieldset>
+    <legend>New User:</legend>
+    Username:<br>
+    <input type="text" name="username">
+    <br><br>
+    Pseudonyme:<br>
+    <input type="text" name="pseudonyme">
+    <br>
+    
+    <input type="radio" name="langue" value="nl"> Nederlands<br>
+  	<input type="radio" name="langue" value="fr"> Français<br>
+  	
+  	<input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+</head>
+<body>
+
+</body>
+</html>

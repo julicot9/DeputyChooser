@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loo.dtd">
+<html>
+<body>
+
+
+
+	<h1>{{ this_category }}</h1>
+	<ul>
+
+		
+		{% for question in all_questions %}
+		
+		<form action="{% url 'jeu:soumettre' question.id %}" method="post"> 
+		{% csrf_token %}
+		<li>{{ question.question }}</li>
+		<a href="{{ question.urlpdf }}">PDF</a>
+
+		<input type="text" id="Question{{ foorloop.counter }}" name="voteUtil" list="votelist">
+		<datalist id="votelist">
+		<option value="Oui">Oui</option>
+		<option value="Non">Non</option>
+		<option value="Abstention">Abstention</option>
+		
+		</datalist>
+		<input type="submit" value="Sauvegarde"> 
+		</form>
+		{% endfor %}
+		
+	</ul>
+</body>
+</html>
